@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:convert';
 
-import 'package:hoagsource/src/hoagicon/hoagicon_style.dart';
+import 'package:hoagsource/src/icon/icon_style.dart';
 
 import 'package:path/path.dart' as path;
 

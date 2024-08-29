@@ -1,0 +1,1 @@
+enum ButtonIconPosition { ltr, rtl }

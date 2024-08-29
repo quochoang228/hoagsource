@@ -5,7 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:path/path.dart' as path;
 
-import 'hoagicon_style.dart';
+import 'icon_style.dart';
 import 'icons.g.dart';
 
 /// Similarly to [IconTheme], you can set the default options for all icons.
