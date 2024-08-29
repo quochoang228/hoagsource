@@ -11,7 +11,7 @@ Future<void> main() async {
   names.sort((a, b) => a.compareTo(b));
 
   print('Generating icons.g.dart...');
-  final file = File(p.join('lib', 'src', 'hoagicon', 'icons.g.dart'));
+  final file = File(p.join('lib', 'src', 'icon', 'icons.g.dart'));
 
   final iconClass = Enum(
     (b) => b
