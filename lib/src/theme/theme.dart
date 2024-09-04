@@ -1,5 +1,5 @@
-export 'color.dart';
-export 'effect.dart';
-export 'radius.dart';
-export 'spacing.dart';
-export 'text_style.dart';
+export 'color.dart' show CoreColors, HoagColors;
+export 'effect.dart' show HoagEffect;
+export 'radius.dart' show HoagRadius;
+export 'spacing.dart' show HoagSpacing;
+export 'text_style.dart' show HoagFontWeight, HoagTextStyle, AppTextStyle;

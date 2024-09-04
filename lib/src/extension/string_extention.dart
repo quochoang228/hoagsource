@@ -1,3 +1,4 @@
+import '../../hoagsource.dart';
 extension StringExtention on String {
   /// Capitalize each word inside string
   ///
@@ -117,4 +118,8 @@ extension StringExtention on String {
   bool hasMatch(String pattern) => RegExp(pattern).hasMatch(this);
 
   String ifIsEmpty(String fallback) => isEmpty ? fallback : this;
+
+    /// Check Null or Empty
+  bool get isNullOrEmpty => isNull || isEmpty;
+
 }

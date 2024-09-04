@@ -1,1 +1,1 @@
-export 'click_helper.dart';
+export 'click_helper.dart' show ClickUtils;
