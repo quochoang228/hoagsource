@@ -30,3 +30,5 @@ export 'state/_state.dart' show HoagEmptyState, HoagErrorState;
 export 'text/_text.dart' show HoagExpandableText, HoagText;
 
 export 'toast/_toast.dart' show HoagNormalToast;
+
+export 'soft_edge_blur/_soft_edge_blur.dart' show SoftEdgeBlur, EdgeBlur, EdgeType;
