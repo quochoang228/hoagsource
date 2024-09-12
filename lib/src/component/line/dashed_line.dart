@@ -15,7 +15,7 @@ const double _normalDashedSpacing = 4;
 
 const DashedLinePosition _normalPosition = DashedLinePosition.leading;
 
-class HoagDashedLine extends StatelessWidget {
+class BaseDashedLine extends StatelessWidget {
   final Axis axis;
 
   final double dashedLength;
@@ -32,7 +32,7 @@ class HoagDashedLine extends StatelessWidget {
 
   final DashedLinePosition position;
 
-  const HoagDashedLine({
+  const BaseDashedLine({
     super.key,
     required this.contentWidget,
     this.axis = _normalAxis,

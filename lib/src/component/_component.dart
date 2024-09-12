@@ -17,7 +17,7 @@ export 'input/_input.dart';
 export 'layout/_layout.dart'
     show BaseDivider, BaseSelectedView, BaseItemRowTitle;
 
-export 'line/dashed_line.dart' show HoagDashedLine, DashedPainter;
+export 'line/dashed_line.dart' show BaseDashedLine, DashedPainter;
 
 export 'loading/_loading.dart' show BaseListLoading, BaseLoadingDialog;
 
