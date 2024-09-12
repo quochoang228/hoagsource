@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../hoagsource.dart';
 
-class HoagSolidButton extends StatelessWidget {
+class BaseSolidButton extends StatelessWidget {
   final String label;
   final Widget? icon;
   final VoidCallback? onPressed;
@@ -22,7 +22,7 @@ class HoagSolidButton extends StatelessWidget {
   final Color foregroundColorPressed;
   final Color foregroundColorDisabled;
 
-  const HoagSolidButton({
+  const BaseSolidButton({
     super.key,
     required this.label,
     this.icon,
@@ -42,7 +42,7 @@ class HoagSolidButton extends StatelessWidget {
     this.foregroundColorDisabled = CoreColors.white,
   });
 
-  const HoagSolidButton.secondary({
+  const BaseSolidButton.secondary({
     super.key,
     required this.label,
     this.icon,
@@ -72,7 +72,7 @@ class HoagSolidButton extends StatelessWidget {
             alignment: alignment ?? Alignment.center,
             elevation: WidgetStatePropertyAll(elevation ?? 0.0),
             textStyle: WidgetStatePropertyAll(
-              textStyle ?? HoagTextStyle.labelLarge,
+              textStyle ?? BaseTextStyle.labelLarge,
             ),
             backgroundColor: WidgetStateProperty.resolveWith(
               (states) {
@@ -99,13 +99,13 @@ class HoagSolidButton extends StatelessWidget {
             padding: WidgetStatePropertyAll<EdgeInsetsGeometry>(
               padding ??
                   const EdgeInsets.symmetric(
-                      vertical: HoagSpacing.spacing3,
-                      horizontal: HoagSpacing.spacing6),
+                      vertical: BaseSpacing.spacing3,
+                      horizontal: BaseSpacing.spacing6),
             ),
             shape: WidgetStatePropertyAll<OutlinedBorder>(
               RoundedRectangleBorder(
                 borderRadius:
-                    borderRadius ?? BorderRadius.circular(HoagRadius.radiusLd),
+                    borderRadius ?? BorderRadius.circular(BaseRadius.radiusLd),
               ),
             ),
           ),
@@ -118,18 +118,18 @@ class HoagSolidButton extends StatelessWidget {
               children: [
                 icon!,
                 const SizedBox(
-                  width: HoagSpacing.spacing2,
+                  width: BaseSpacing.spacing2,
                 ),
                 Text(
                   label,
-                  style: textStyle ?? HoagTextStyle.labelLarge,
+                  style: textStyle ?? BaseTextStyle.labelLarge,
                 ),
               ],
             )
           : Center(
               child: Text(
                 label,
-                style: textStyle ?? HoagTextStyle.labelLarge,
+                style: textStyle ?? BaseTextStyle.labelLarge,
               ),
             ),
     );

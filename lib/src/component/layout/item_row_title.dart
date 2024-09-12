@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../hoagsource.dart';
 
-class HoagItemRowTitle extends StatelessWidget {
-  const HoagItemRowTitle({
+class BaseItemRowTitle extends StatelessWidget {
+  const BaseItemRowTitle({
     super.key,
     required this.title,
     required this.value,
@@ -24,19 +24,19 @@ class HoagItemRowTitle extends StatelessWidget {
           flex: 1,
           child: Text(
             title,
-            style: HoagTextStyle.bodySmall.applyColor(HoagColors.textSubtitle),
+            style: BaseTextStyle.bodySmall.applyColor(BaseColors.textSubtitle),
             textAlign: TextAlign.start,
           ),
         ),
         const SizedBox(
-          width: HoagSpacing.spacing2,
+          width: BaseSpacing.spacing2,
         ),
         Expanded(
           flex: 3,
           child: Text(
             value,
             style: valueStyle ??
-                HoagTextStyle.labelMedium.applyColor(HoagColors.textBody),
+                BaseTextStyle.labelMedium.applyColor(BaseColors.textBody),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.start,

@@ -9,30 +9,30 @@ import 'icon_style.dart';
 import 'icons.g.dart';
 
 /// Similarly to [IconTheme], you can set the default options for all icons.
-/// Simply add [HoagIconTheme] to the widget tree, ideally as close to your
+/// Simply add [BaseIconTheme] to the widget tree, ideally as close to your
 /// [MaterialApp] as possible:
 ///
 /// ```dart
 /// MaterialApp(
 ///   // ...
-///   child: HoagIconTheme(
-///     style: HoagIconStyle.solid,
+///   child: BaseIconTheme(
+///     style: BaseIconStyle.solid,
 ///     child: // ...
 ///   ),
 /// ),
 /// ```
 ///
-/// If a [HoagIconTheme] exists as an ancestor of a [HoagIcon], the properties
+/// If a [BaseIconTheme] exists as an ancestor of a [BaseIcon], the properties
 /// on the theme will be used as defaults - if they are not specified on the
-/// [HoagIcon].
-class HoagIconTheme extends InheritedWidget {
-  final HoagIconStyle style;
+/// [BaseIcon].
+class BaseIconTheme extends InheritedWidget {
+  final BaseIconStyle style;
 
-  /// Set to true to allow each [HoagIcon] to use the `defaultSemanticLabel`
+  /// Set to true to allow each [BaseIcon] to use the `defaultSemanticLabel`
   /// for an icon if a `semanticLabel` is not set.
   final bool useDefaultSemanticLabel;
 
-  const HoagIconTheme({
+  const BaseIconTheme({
     super.key,
     required this.style,
     required super.child,
@@ -40,42 +40,42 @@ class HoagIconTheme extends InheritedWidget {
   });
 
   static bool shouldUseSemanticLabel(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<HoagIconTheme>()?.useDefaultSemanticLabel ?? false;
+    return context.dependOnInheritedWidgetOfExactType<BaseIconTheme>()?.useDefaultSemanticLabel ?? false;
   }
 
-  /// Attempts to get the [style] from an ancestor [HoagIconTheme] widget.
+  /// Attempts to get the [style] from an ancestor [BaseIconTheme] widget.
   /// If this is found, the style is returned - otherwise null is returned and
   /// a fallback may be determined.
-  static HoagIconStyle? maybeStyleOf(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<HoagIconTheme>()?.style;
+  static BaseIconStyle? maybeStyleOf(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType<BaseIconTheme>()?.style;
   }
 
-  /// Assumes that there is an ancestor [HoagIconTheme] theme and gets the
+  /// Assumes that there is an ancestor [BaseIconTheme] theme and gets the
   /// [style] property from it. If there is, in fact, no ancestor, an exception
   /// is thrown.
-  static HoagIconStyle styleOf(BuildContext context) {
-    final HoagIconStyle? result = maybeStyleOf(context);
-    assert(result != null, 'There is no HoagIconStyle in context.');
+  static BaseIconStyle styleOf(BuildContext context) {
+    final BaseIconStyle? result = maybeStyleOf(context);
+    assert(result != null, 'There is no BaseIconStyle in context.');
     return result!;
   }
 
   @override
-  bool updateShouldNotify(covariant HoagIconTheme oldWidget) => style != oldWidget.style;
+  bool updateShouldNotify(covariant BaseIconTheme oldWidget) => style != oldWidget.style;
 }
 
-/// Similarly to Material Icons, use [HoagIcon] Widget to display HoagIcon.
+/// Similarly to Material Icons, use [BaseIcon] Widget to display BaseIcon.
 ///
-/// The default [style] is [HoagIconStyle.outline], you can change this with
-/// a [HoagIconTheme].
+/// The default [style] is [BaseIconStyle.outline], you can change this with
+/// a [BaseIconTheme].
 ///
 /// Other defaults such as [color] and [size] are extracted from the icon
 /// theme of the context.
 ///
 /// ```dart
-/// HoagIcon(HoagIcons.arrowLeft)
+/// BaseIcon(BaseIcons.arrowLeft)
 /// ```
-class HoagIcon extends StatelessWidget {
-  const HoagIcon(
+class BaseIcon extends StatelessWidget {
+  const BaseIcon(
     this.icon, {super.key, 
     this.color,
     this.size,
@@ -86,12 +86,12 @@ class HoagIcon extends StatelessWidget {
   final Color? color;
   final double? size;
 
-  /// The icon to be displayed. One of [HoagIcons].
-  final HoagIcons icon;
+  /// The icon to be displayed. One of [BaseIcons].
+  final BaseIcons icon;
 
-  /// The preferred icon style. See [HoagIconStyle]. If not specified, defaults
+  /// The preferred icon style. See [BaseIconStyle]. If not specified, defaults
   /// to 'outline'.
-  final HoagIconStyle? style;
+  final BaseIconStyle? style;
 
   /// The semantic label for the icon.
   ///
@@ -99,8 +99,8 @@ class HoagIcon extends StatelessWidget {
   /// and is not shown in the UI.
   ///
   /// Null by default, but every icon has a `defaultSemanticLabel` option that
-  /// may be used. If a [HoagIconsTheme] is present as an ancestor, and has
-  /// [HoagIconsTheme.useDefaultSemanticLabel] to `true`, this will be set to
+  /// may be used. If a [BaseIconsTheme] is present as an ancestor, and has
+  /// [BaseIconsTheme.useDefaultSemanticLabel] to `true`, this will be set to
   /// `defaultSemanticLabel` for an icon unless this field is explicitly
   /// specified.
   final String? semanticLabel;
@@ -108,9 +108,9 @@ class HoagIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Use the explicit style name, if specified. Otherwise, check if there is
-    // a HoagIconTheme to use. Finally, if none of these are available, resort
+    // a BaseIconTheme to use. Finally, if none of these are available, resort
     // to 'outline' as a default.
-    final styleName = (style ?? HoagIconTheme.maybeStyleOf(context) ?? HoagIconStyle.outline).name;
+    final styleName = (style ?? BaseIconTheme.maybeStyleOf(context) ?? BaseIconStyle.outline).name;
 
     // Locate the icon asset.
     final iconPath = path.join('packages/hoagsource/assets/icons/$styleName/', icon.name);
@@ -150,7 +150,7 @@ class HoagIcon extends StatelessWidget {
     );
 
     return Semantics(
-      label: semanticLabel ?? (HoagIconTheme.shouldUseSemanticLabel(context) ? icon.defaultSemanticLabel : null),
+      label: semanticLabel ?? (BaseIconTheme.shouldUseSemanticLabel(context) ? icon.defaultSemanticLabel : null),
       child: ExcludeSemantics(
         child: iconWidget,
       ),

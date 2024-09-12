@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../../../hoagsource.dart';
 
-class HoagCircularElevatedButton extends StatelessWidget {
-  const HoagCircularElevatedButton({required this.onPressed, required this.icon, super.key});
+class BaseCircularElevatedButton extends StatelessWidget {
+  const BaseCircularElevatedButton({required this.onPressed, required this.icon, super.key});
 
   final Widget icon;
   final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
-    final iconColor = HoagColors.textBody;
-    final fillColor = HoagColors.backgroundGray1;
+    final iconColor = BaseColors.textBody;
+    final fillColor = BaseColors.backgroundGray1;
     return RawMaterialButton(
       elevation: 0,
       focusElevation: 0,

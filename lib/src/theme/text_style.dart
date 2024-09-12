@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-abstract class HoagTextStyle {
+abstract class BaseTextStyle {
   static const TextStyle titleLarge = TextStyle(
     fontSize: 32,
     height: 1.25,
@@ -132,7 +132,7 @@ abstract class HoagTextStyle {
   );
 }
 
-abstract class HoagFontWeight {
+abstract class BaseFontWeight {
   /// FontWeight value of `w900`
   static const FontWeight black = FontWeight.w900;
 
@@ -164,55 +164,55 @@ abstract class HoagFontWeight {
 extension AppTextStyle on TextStyle {
   TextStyle black() {
     return copyWith(
-      fontWeight: HoagFontWeight.black,
+      fontWeight: BaseFontWeight.black,
     );
   }
 
   TextStyle extraBold() {
     return copyWith(
-      fontWeight: HoagFontWeight.extraBold,
+      fontWeight: BaseFontWeight.extraBold,
     );
   }
 
   TextStyle bold() {
     return copyWith(
-      fontWeight: HoagFontWeight.bold,
+      fontWeight: BaseFontWeight.bold,
     );
   }
 
   TextStyle semiBold() {
     return copyWith(
-      fontWeight: HoagFontWeight.semiBold,
+      fontWeight: BaseFontWeight.semiBold,
     );
   }
 
   TextStyle medium() {
     return copyWith(
-      fontWeight: HoagFontWeight.medium,
+      fontWeight: BaseFontWeight.medium,
     );
   }
 
   TextStyle regular() {
     return copyWith(
-      fontWeight: HoagFontWeight.regular,
+      fontWeight: BaseFontWeight.regular,
     );
   }
 
   TextStyle light() {
     return copyWith(
-      fontWeight: HoagFontWeight.light,
+      fontWeight: BaseFontWeight.light,
     );
   }
 
   TextStyle extraLight() {
     return copyWith(
-      fontWeight: HoagFontWeight.extraLight,
+      fontWeight: BaseFontWeight.extraLight,
     );
   }
 
   TextStyle thin() {
     return copyWith(
-      fontWeight: HoagFontWeight.thin,
+      fontWeight: BaseFontWeight.thin,
     );
   }
 

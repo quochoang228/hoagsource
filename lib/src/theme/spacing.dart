@@ -1,6 +1,6 @@
 
 
-abstract class HoagSpacing {
+abstract class BaseSpacing {
   // ====================GAP===============================
   static const double spacingPx = 1.0;
   static const double spacing0 = 0.0;

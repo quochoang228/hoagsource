@@ -5,7 +5,7 @@ import '../../../hoagsource.dart';
 
 typedef TextExpandedCallback = Function(bool);
 
-class HoagExpandableText extends StatefulWidget {
+class BaseExpandableText extends StatefulWidget {
   final String text;
 
   final int? maxLines;
@@ -14,7 +14,7 @@ class HoagExpandableText extends StatefulWidget {
   final TextExpandedCallback? onExpanded;
   final Color? color;
 
-  const HoagExpandableText(
+  const BaseExpandableText(
       {super.key,
       required this.text,
       this.maxLines = 1000000,
@@ -23,10 +23,10 @@ class HoagExpandableText extends StatefulWidget {
       this.color});
 
   @override
-  HoagExpandableTextState createState() => HoagExpandableTextState();
+  BaseExpandableTextState createState() => BaseExpandableTextState();
 }
 
-class HoagExpandableTextState extends State<HoagExpandableText> {
+class BaseExpandableTextState extends State<BaseExpandableText> {
   bool _expanded = false;
 
   @override
@@ -77,8 +77,8 @@ class HoagExpandableTextState extends State<HoagExpandableText> {
 
     Text tx = Text(
       'Xem thêm...',
-      style: HoagTextStyle.captionVeryLarge.copyWith(
-        color: HoagColors.primary,
+      style: BaseTextStyle.captionVeryLarge.copyWith(
+        color: BaseColors.primary,
       ),
     );
     Container cnt = Container(
@@ -117,7 +117,7 @@ class HoagExpandableTextState extends State<HoagExpandableText> {
   }
 
   TextStyle _defaultTextStyle() {
-    TextStyle style = widget.textStyle ?? HoagTextStyle.bodyMedium;
+    TextStyle style = widget.textStyle ?? BaseTextStyle.bodyMedium;
     return style;
   }
 
@@ -125,7 +125,7 @@ class HoagExpandableTextState extends State<HoagExpandableText> {
     return TextSpan(
         text: ' ' 'Thu gọn',
         style: TextStyle(
-          color: HoagColors.primary,
+          color: BaseColors.primary,
           fontSize: 14,
         ),
         recognizer: TapGestureRecognizer()

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../hoagsource.dart';
 
-class HoagDivider extends StatelessWidget {
-  const HoagDivider({
+class BaseDivider extends StatelessWidget {
+  const BaseDivider({
     super.key,
     this.color,
     this.height = 1,
@@ -18,7 +18,7 @@ class HoagDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: color ?? HoagColors.borderDivider,
+        color: color ?? BaseColors.borderDivider,
       ),
       padding: padding,
       height: height,

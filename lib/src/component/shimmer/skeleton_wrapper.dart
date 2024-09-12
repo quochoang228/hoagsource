@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import '../../../hoagsource.dart';
 import 'shimmer.dart';
 
-class HoagSkeletonWrapper extends StatefulWidget {
+class BaseSkeletonWrapper extends StatefulWidget {
   final Widget child;
   final Color? baseColor;
   final Color? highlightColor;
 
-  const HoagSkeletonWrapper({
+  const BaseSkeletonWrapper({
     super.key,
     required this.child,
     this.baseColor,
@@ -15,10 +15,10 @@ class HoagSkeletonWrapper extends StatefulWidget {
   });
 
   @override
-  HoagSkeletonWrapperState createState() => HoagSkeletonWrapperState();
+  BaseSkeletonWrapperState createState() => BaseSkeletonWrapperState();
 }
 
-class HoagSkeletonWrapperState extends State<HoagSkeletonWrapper> {
+class BaseSkeletonWrapperState extends State<BaseSkeletonWrapper> {
   int _offset = 0;
   late int time;
 

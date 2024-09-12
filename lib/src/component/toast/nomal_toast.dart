@@ -18,7 +18,7 @@ class BrnDuration {
   static const Duration long = Duration(seconds: 3);
 }
 
-class HoagNormalToast {
+class BaseNormalToast {
   static const int _defaultTopOffset = 50;
 
   static const int _defaultBottomOffset = 50;
@@ -49,8 +49,8 @@ class HoagNormalToast {
       context,
       duration: duration,
       preIcon: SvgPicture.asset(
-        HoagAssets.toastSuccess,
-        package: HoagStrings.flutterPackageName,
+        BaseAssets.toastSuccess,
+        package: BaseStrings.flutterPackageName,
       ),
       gravity: BrnToastGravity.center,
     );
@@ -65,8 +65,8 @@ class HoagNormalToast {
       context,
       duration: duration,
       preIcon: SvgPicture.asset(
-        HoagAssets.toastError,
-        package: HoagStrings.flutterPackageName,
+        BaseAssets.toastError,
+        package: BaseStrings.flutterPackageName,
       ),
       gravity: BrnToastGravity.center,
     );
@@ -236,14 +236,14 @@ class ToastChild extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             color: background ?? CoreColors.black.withOpacity(0.7),
-            borderRadius: BorderRadius.circular(radius ?? HoagRadius.radiusMd),
+            borderRadius: BorderRadius.circular(radius ?? BaseRadius.radiusMd),
           ),
           margin: const EdgeInsets.symmetric(horizontal: 20),
           padding: const EdgeInsets.fromLTRB(
-            HoagSpacing.spacing4,
-            HoagSpacing.spacing6,
-            HoagSpacing.spacing4,
-            HoagSpacing.spacing6,
+            BaseSpacing.spacing4,
+            BaseSpacing.spacing6,
+            BaseSpacing.spacing4,
+            BaseSpacing.spacing6,
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -253,7 +253,7 @@ class ToastChild extends StatelessWidget {
               leading ?? const SizedBox.shrink(),
               leading != null
                   ? const SizedBox(
-                      height: HoagSpacing.spacing25,
+                      height: BaseSpacing.spacing25,
                     )
                   : const SizedBox.shrink(),
               Text(

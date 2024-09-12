@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 
 import '../../../../hoagsource.dart';
 
-abstract class HoagButtonTheme {
+abstract class BaseButtonTheme {
   static ElevatedButtonThemeData primaryButtonTheme = ElevatedButtonThemeData(
     style: ButtonStyle(
       alignment: Alignment.center,
       elevation: const WidgetStatePropertyAll(0),
       textStyle: const WidgetStatePropertyAll(
-        HoagTextStyle.labelLarge,
+        BaseTextStyle.labelLarge,
       ),
       backgroundColor: WidgetStateProperty.resolveWith(
         (states) {
           //=====DISABLED EVENT
           if (states.contains(WidgetState.disabled)) {
-            return HoagColors.primary.withOpacity(0.5);
+            return BaseColors.primary.withOpacity(0.5);
           } else if (states.contains(WidgetState.pressed)) {
-            return HoagColors.primaryPressed;
+            return BaseColors.primaryPressed;
           } else {
-            return HoagColors.primary;
+            return BaseColors.primary;
           }
         },
       ),
@@ -26,21 +26,21 @@ abstract class HoagButtonTheme {
         (states) {
           //=====DISABLED EVENT
           if (states.contains(WidgetState.disabled)) {
-            return HoagColors.textOnColor;
+            return BaseColors.textOnColor;
           } else if (states.contains(WidgetState.pressed)) {
-            return HoagColors.textOnColor;
+            return BaseColors.textOnColor;
           } else {
-            return HoagColors.textOnColor;
+            return BaseColors.textOnColor;
           }
         },
       ),
       padding: const WidgetStatePropertyAll<EdgeInsetsGeometry>(
         EdgeInsets.symmetric(
-            vertical: HoagSpacing.spacing3, horizontal: HoagSpacing.spacing6),
+            vertical: BaseSpacing.spacing3, horizontal: BaseSpacing.spacing6),
       ),
       shape: WidgetStatePropertyAll<OutlinedBorder>(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(HoagRadius.radiusLd),
+          borderRadius: BorderRadius.circular(BaseRadius.radiusLd),
         ),
       ),
     ),

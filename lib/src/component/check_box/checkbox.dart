@@ -4,8 +4,8 @@ import '../../../hoagsource.dart';
 
 typedef OnCheckBoxChange<bool> = bool Function(bool value);
 
-class HoagCheckBox extends StatelessWidget {
-  const HoagCheckBox({
+class BaseCheckBox extends StatelessWidget {
+  const BaseCheckBox({
     super.key,
     required this.onCheckBoxChange,
     required this.value,
@@ -24,12 +24,12 @@ class HoagCheckBox extends StatelessWidget {
       value: value,
       shape: shape ??
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(HoagSpacing.spacing15s),
+            borderRadius: BorderRadius.circular(BaseSpacing.spacing15s),
           ),
       fillColor: WidgetStateProperty.resolveWith(
         (states) {
           if (states.contains(WidgetState.selected)) {
-            return HoagColors.primary;
+            return BaseColors.primary;
           } else if (states.contains(WidgetState.disabled)) {
             return CoreColors.neutral01;
           } else {
@@ -39,7 +39,7 @@ class HoagCheckBox extends StatelessWidget {
       ),
       side: borderSide ??
           BorderSide(
-            color: HoagColors.secondary,
+            color: BaseColors.secondary,
             width: 1.5,
           ),
       onChanged: onCheckBoxChange != null

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-abstract class HoagColors {
+abstract class BaseColors {
   static Color get backgroundWhite => CoreColors.white;
 
   static Color get backgroundBlack => CoreColors.black;

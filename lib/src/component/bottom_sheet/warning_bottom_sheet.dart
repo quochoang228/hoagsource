@@ -62,10 +62,10 @@ class WarningBottomSheetView extends StatelessWidget {
     if (title != null) {
       modalContent.add(
         Padding(
-          padding: const EdgeInsets.only(bottom: HoagSpacing.spacing1),
+          padding: const EdgeInsets.only(bottom: BaseSpacing.spacing1),
           child: Text(
             title!,
-            style: HoagTextStyle.headlineLarge,
+            style: BaseTextStyle.headlineLarge,
             textAlign: TextAlign.center,
           ),
         ),
@@ -74,7 +74,7 @@ class WarningBottomSheetView extends StatelessWidget {
     if (description != null) {
       modalContent.add(Text(
         description!,
-        style: HoagTextStyle.bodySmall.applyColor(HoagColors.textSubtitle),
+        style: BaseTextStyle.bodySmall.applyColor(BaseColors.textSubtitle),
         overflow: TextOverflow.ellipsis,
         maxLines: 3,
         textAlign: TextAlign.center,
@@ -89,11 +89,11 @@ class WarningBottomSheetView extends StatelessWidget {
     // }
     if (isShowIcon) {
       Widget iconContent = Padding(
-        padding: const EdgeInsets.only(bottom: HoagSpacing.spacing6),
+        padding: const EdgeInsets.only(bottom: BaseSpacing.spacing6),
         child: icon ??
             SvgPicture.asset(
-              HoagAssets.circleWarning,
-              package: HoagStrings.flutterPackageName,
+              BaseAssets.circleWarning,
+              package: BaseStrings.flutterPackageName,
             ),
       );
       modalContent.insert(0, iconContent);
@@ -101,8 +101,8 @@ class WarningBottomSheetView extends StatelessWidget {
     // Button Configuration
     if (primaryButtonLabel != null) {
       button = Padding(
-        padding: const EdgeInsets.only(bottom: HoagSpacing.spacing4),
-        child: HoagSolidButton(
+        padding: const EdgeInsets.only(bottom: BaseSpacing.spacing4),
+        child: BaseSolidButton(
           label: primaryButtonLabel ?? '',
           onPressed: () {
             primaryOnPressed!();
@@ -113,8 +113,8 @@ class WarningBottomSheetView extends StatelessWidget {
     }
     if (secondaryButtonLabel != null) {
       button = Padding(
-        padding: const EdgeInsets.only(bottom: HoagSpacing.spacing4),
-        child: HoagSolidButton.secondary(
+        padding: const EdgeInsets.only(bottom: BaseSpacing.spacing4),
+        child: BaseSolidButton.secondary(
           style: secondaryButtonStyle,
           label: secondaryButtonLabel ?? '',
           onPressed: () {
@@ -126,8 +126,8 @@ class WarningBottomSheetView extends StatelessWidget {
     }
     if (textButtonLabel != null) {
       button = Padding(
-        padding: const EdgeInsets.only(bottom: HoagSpacing.spacing4),
-        child: HoagTextButton(
+        padding: const EdgeInsets.only(bottom: BaseSpacing.spacing4),
+        child: BaseTextButton(
           label: textButtonLabel ?? '',
           onPressed: () {
             textButtonOnPressed!();
@@ -138,8 +138,8 @@ class WarningBottomSheetView extends StatelessWidget {
     }
     if (tertiaryButtonLabel != null) {
       button = Padding(
-        padding: const EdgeInsets.only(bottom: HoagSpacing.spacing4),
-        child: HoagTextButton(
+        padding: const EdgeInsets.only(bottom: BaseSpacing.spacing4),
+        child: BaseTextButton(
           label: tertiaryButtonLabel ?? '',
           onPressed: () {
             tertiaryButtonOnPressed!();
@@ -150,12 +150,12 @@ class WarningBottomSheetView extends StatelessWidget {
     }
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.all(HoagSpacing.spacing8),
+        padding: const EdgeInsets.all(BaseSpacing.spacing8),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             mainAxisSize: MainAxisSize.max,
             children: modalContent +
-                [const SizedBox(height: HoagSpacing.spacing6)] +
+                [const SizedBox(height: BaseSpacing.spacing6)] +
                 buttonGroup),
       ),
     );

@@ -7,7 +7,7 @@ Future<void> bootstrap({
   required Widget app,
   required Function injectorApp,
   Future? intFirebase,
-  Future? initPersistenStorage,
+  Future? initPersistentStorage,
   Function? configSystemUI,
   Future<void>? configPreferredOrientations,
   Future<void>? crashlytics,
@@ -23,7 +23,7 @@ Future<void> bootstrap({
     configSystemUI != null ? configSystemUI() : systemUI();
 
     // Dependencies local storage
-    if (initPersistenStorage != null) await initPersistenStorage;
+    if (initPersistentStorage != null) await initPersistentStorage;
 
     // Dependencies
     injectorApp();

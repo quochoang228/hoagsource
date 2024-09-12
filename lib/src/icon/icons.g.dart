@@ -1,11 +1,9 @@
 // Auto-generated file.
 // DO NOT MODIFY BY HAND - YOUR CHANGES WILL BE OVERWRITTEN.
 
-/// The heroicons icon set in Flutter.
-/// https://heroicons.com
-library hoagicons;
+library base_icons;
 
-enum HoagIcons {
+enum BaseIcons {
   /// Aave icon
   aave._('aave', defaultSemanticLabel: "Aave icon"),
 
@@ -3981,7 +3979,7 @@ enum HoagIcons {
   /// Zoom icon
   zoom._('zoom', defaultSemanticLabel: "Zoom icon");
 
-  const HoagIcons._(
+  const BaseIcons._(
     this.name, {
     this.defaultSemanticLabel,
   });

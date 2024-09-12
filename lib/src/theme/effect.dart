@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-abstract class HoagEffect {
+abstract class BaseEffect {
   static const BoxShadow shadowNavBarEffect0 = BoxShadow(
     color: Color(0x0c000000),
     offset: Offset(0, 0.75),

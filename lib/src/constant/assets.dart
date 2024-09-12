@@ -1,5 +1,5 @@
-class HoagAssets {
-  const HoagAssets._();
+class BaseAssets {
+  const BaseAssets._();
 
   static const String cancel = "assets/hoag/cancel.svg";
   static const String cancelSmall = "assets/hoag/cancel_small.svg";

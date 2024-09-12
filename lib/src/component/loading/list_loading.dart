@@ -3,8 +3,8 @@ import 'package:gap/gap.dart';
 
 import '../../../hoagsource.dart';
 
-class HoagListLoading extends StatelessWidget {
-  const HoagListLoading({
+class BaseListLoading extends StatelessWidget {
+  const BaseListLoading({
     super.key,
     this.padding = EdgeInsets.zero,
   });
@@ -20,51 +20,51 @@ class HoagListLoading extends StatelessWidget {
         return Container(
           decoration: BoxDecoration(
             // borderRadius: BorderRadius.circular(HoagRadius.radiusMd),
-            color: HoagColors.backgroundWhite,
+            color: BaseColors.backgroundWhite,
           ),
           padding: const EdgeInsets.symmetric(
-              vertical: HoagSpacing.spacing2, horizontal: HoagSpacing.spacing3),
+              vertical: BaseSpacing.spacing2, horizontal: BaseSpacing.spacing3),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              HoagSkeletonWrapper(
+              BaseSkeletonWrapper(
                 child: Container(
                   height: size.height * 0.04,
                   width: size.width * 0.6,
                   decoration: BoxDecoration(
-                    color: HoagColors.backgroundGray1,
-                    borderRadius: BorderRadius.circular(HoagRadius.radiusSm),
+                    color: BaseColors.backgroundGray1,
+                    borderRadius: BorderRadius.circular(BaseRadius.radiusSm),
                   ),
                 ),
               ),
-              const Gap(HoagSpacing.spacing2),
-              HoagSkeletonWrapper(
+              const Gap(BaseSpacing.spacing2),
+              BaseSkeletonWrapper(
                 child: Container(
-                  height: HoagSpacing.spacing4,
+                  height: BaseSpacing.spacing4,
                   decoration: BoxDecoration(
-                    color: HoagColors.backgroundGray1,
-                    borderRadius: BorderRadius.circular(HoagRadius.radiusSm),
+                    color: BaseColors.backgroundGray1,
+                    borderRadius: BorderRadius.circular(BaseRadius.radiusSm),
                   ),
                 ),
               ),
-              const Gap(HoagSpacing.spacing2),
-              HoagSkeletonWrapper(
+              const Gap(BaseSpacing.spacing2),
+              BaseSkeletonWrapper(
                 child: Container(
-                  height: HoagSpacing.spacing4,
+                  height: BaseSpacing.spacing4,
                   decoration: BoxDecoration(
-                    color: HoagColors.backgroundGray1,
-                    borderRadius: BorderRadius.circular(HoagRadius.radiusSm),
+                    color: BaseColors.backgroundGray1,
+                    borderRadius: BorderRadius.circular(BaseRadius.radiusSm),
                   ),
                 ),
               ),
-              const Gap(HoagSpacing.spacing2),
-              HoagSkeletonWrapper(
+              const Gap(BaseSpacing.spacing2),
+              BaseSkeletonWrapper(
                 child: Container(
-                  height: HoagSpacing.spacing4,
+                  height: BaseSpacing.spacing4,
                   width: size.width * 0.8,
                   decoration: BoxDecoration(
-                    color: HoagColors.backgroundGray1,
-                    borderRadius: BorderRadius.circular(HoagRadius.radiusSm),
+                    color: BaseColors.backgroundGray1,
+                    borderRadius: BorderRadius.circular(BaseRadius.radiusSm),
                   ),
                 ),
               ),
@@ -75,7 +75,7 @@ class HoagListLoading extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       padding: padding,
-      separatorBuilder: (context, index) => const Gap(HoagSpacing.spacing05),
+      separatorBuilder: (context, index) => const Gap(BaseSpacing.spacing05),
       itemCount: 3,
     );
   }

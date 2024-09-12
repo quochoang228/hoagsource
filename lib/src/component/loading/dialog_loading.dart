@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import '../../../hoagsource.dart';
 import 'safe_dialog.dart';
 
-class HoagLoadingDialog extends Dialog {
+class BaseLoadingDialog extends Dialog {
   static const String _loadingDialogTag = '_loadingDialogTag';
 
   final String? content;
 
-  const HoagLoadingDialog({super.key, this.content});
+  const BaseLoadingDialog({super.key, this.content});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class HoagLoadingDialog extends Dialog {
         barrierDismissible: barrierDismissible,
         useRootNavigator: useRootNavigator,
         builder: (_) {
-          return HoagLoadingDialog(content: content ?? 'Loading...');
+          return BaseLoadingDialog(content: content ?? 'Loading...');
         });
   }
 
@@ -72,7 +72,7 @@ class ContentLoading extends StatelessWidget {
         height: 50,
         // width: loadingMaxWidth,
         decoration: BoxDecoration(
-          color: HoagColors.backgroundGray3,
+          color: BaseColors.backgroundGray3,
           borderRadius: BorderRadius.circular(12),
         ),
         child: Center(
@@ -96,7 +96,7 @@ class ContentLoading extends StatelessWidget {
                   child: Text(
                     loadingText,
                     maxLines: 1,
-                    style: HoagTextStyle.captionMedium.copyWith(
+                    style: BaseTextStyle.captionMedium.copyWith(
                       color: CoreColors.white,
                       decoration: TextDecoration.none,
                     ),

@@ -15,7 +15,7 @@ Future<void> main() async {
 
   final iconClass = Enum(
     (b) => b
-      ..name = 'HoagIcons'
+      ..name = 'BaseIcons'
       ..values.addAll([
         ...names.map((fileName) {
           return EnumValue((b) {
@@ -78,9 +78,9 @@ Future<void> main() async {
     '// Auto-generated file.\n'
     '// DO NOT MODIFY BY HAND - YOUR CHANGES WILL BE OVERWRITTEN.\n'
     '\n'
-    '/// The heroicons icon set in Flutter.\n'
-    '/// https://heroicons.com\n'
-    'library hoagicons; '
+    // '/// The heroicons icon set in Flutter.\n'
+    // '/// https://heroicons.com\n'
+    'library base_icons; '
     '$x',
   ));
 }

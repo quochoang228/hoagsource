@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../hoagsource.dart';
 
-class HoagText extends StatelessWidget {
-  const HoagText({
+class BaseText extends StatelessWidget {
+  const BaseText({
     super.key,
     required this.content,
     this.style,
@@ -34,7 +34,7 @@ class HoagText extends StatelessWidget {
     // );
     return Text.rich(
       TextSpan(
-        style: style ?? HoagTextStyle.bodyMedium,
+        style: style ?? BaseTextStyle.bodyMedium,
         // textAlign: textAlign,
         // overflow: overflow,
         // maxLines: maxLines,
@@ -44,7 +44,7 @@ class HoagText extends StatelessWidget {
             TextSpan(
               text: ' * ',
               style: requireStyle ??
-                  HoagTextStyle.bodyMedium.applyColor(HoagColors.primary),
+                  BaseTextStyle.bodyMedium.applyColor(BaseColors.primary),
             ),
           ],
         ],

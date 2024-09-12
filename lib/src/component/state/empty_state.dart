@@ -5,8 +5,8 @@ import 'package:gap/gap.dart';
 
 import '../../../hoagsource.dart';
 
-class HoagEmptyState extends StatelessWidget {
-  const HoagEmptyState({
+class BaseEmptyState extends StatelessWidget {
+  const BaseEmptyState({
     super.key,
     this.title,
     this.msg,
@@ -23,19 +23,19 @@ class HoagEmptyState extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         SvgPicture.asset(
-          HoagAssets.stateEmpty,
-          package: HoagStrings.flutterPackageName,
+          BaseAssets.stateEmpty,
+          package: BaseStrings.flutterPackageName,
           width: MediaQuery.sizeOf(context).width * 0.35,
           height: MediaQuery.sizeOf(context).width * 0.35,
         ),
         Text(
           title ?? '',
-          style: HoagTextStyle.titleSmall,
+          style: BaseTextStyle.titleSmall,
         ),
-        const Gap(HoagSpacing.spacing2),
+        const Gap(BaseSpacing.spacing2),
         Text(
           msg ?? '',
-          style: HoagTextStyle.captionLarge,
+          style: BaseTextStyle.captionLarge,
         ),
       ],
     );

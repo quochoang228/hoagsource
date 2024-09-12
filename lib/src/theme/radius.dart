@@ -1,4 +1,4 @@
-abstract class HoagRadius {
+abstract class BaseRadius {
   ///======================RADIUS=============================//
   static const double radiusSm = 4.0;
   static const double radiusMd = 8.0;

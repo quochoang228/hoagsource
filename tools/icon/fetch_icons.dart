@@ -55,7 +55,7 @@ Future<void> main([List<String> arguments = const []]) async {
   // First, create a generic method that can be applied to any given icon
   // style.
   processIcons(String size, String type,
-      {required HoagIconStyle toStyle}) async {
+      {required BaseIconStyle toStyle}) async {
     final sourceStyleDir =
         Directory(path.join(cacheDir.path, "src", size, type));
     final targetStyleDir = Directory(path.join('assets', toStyle.name));
@@ -85,10 +85,10 @@ Future<void> main([List<String> arguments = const []]) async {
   }
 
   // Then, process each of the icon styles in turn.
-  await processIcons('24', 'outline', toStyle: HoagIconStyle.outline);
-  await processIcons('24', 'solid', toStyle: HoagIconStyle.solid);
-  await processIcons('20', 'solid', toStyle: HoagIconStyle.mini);
-  await processIcons('16', 'solid', toStyle: HoagIconStyle.micro);
+  await processIcons('24', 'outline', toStyle: BaseIconStyle.outline);
+  await processIcons('24', 'solid', toStyle: BaseIconStyle.solid);
+  await processIcons('20', 'solid', toStyle: BaseIconStyle.mini);
+  await processIcons('16', 'solid', toStyle: BaseIconStyle.micro);
 
   // Finally, clear up.
   await cacheDir.delete(recursive: true);

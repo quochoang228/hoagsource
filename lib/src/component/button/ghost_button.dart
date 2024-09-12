@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../hoagsource.dart';
 
-class HoagGhostButton extends StatelessWidget {
+class BaseGhostButton extends StatelessWidget {
   final String label;
   final Widget? icon;
   final VoidCallback? onPressed;
@@ -24,7 +24,7 @@ class HoagGhostButton extends StatelessWidget {
 
   final Color borderColor;
 
-  const HoagGhostButton({
+  const BaseGhostButton({
     super.key,
     required this.label,
     this.icon,
@@ -45,7 +45,7 @@ class HoagGhostButton extends StatelessWidget {
     this.borderColor = CoreColors.primary,
   });
 
-  const HoagGhostButton.secondary({
+  const BaseGhostButton.secondary({
     super.key,
     required this.label,
     this.icon,
@@ -76,7 +76,7 @@ class HoagGhostButton extends StatelessWidget {
             alignment: alignment ?? Alignment.center,
             elevation: WidgetStatePropertyAll(elevation ?? 0.0),
             textStyle: WidgetStatePropertyAll(
-              textStyle ?? HoagTextStyle.labelLarge,
+              textStyle ?? BaseTextStyle.labelLarge,
             ),
             backgroundColor: WidgetStateProperty.resolveWith(
               (states) {
@@ -103,8 +103,8 @@ class HoagGhostButton extends StatelessWidget {
             padding: WidgetStatePropertyAll<EdgeInsetsGeometry>(
               padding ??
                   const EdgeInsets.symmetric(
-                      vertical: HoagSpacing.spacing3,
-                      horizontal: HoagSpacing.spacing6),
+                      vertical: BaseSpacing.spacing3,
+                      horizontal: BaseSpacing.spacing6),
             ),
             side: WidgetStateProperty.resolveWith(
               (states) {
@@ -122,7 +122,7 @@ class HoagGhostButton extends StatelessWidget {
             shape: WidgetStatePropertyAll<OutlinedBorder>(
               RoundedRectangleBorder(
                 borderRadius:
-                    borderRadius ?? BorderRadius.circular(HoagRadius.radiusLd),
+                    borderRadius ?? BorderRadius.circular(BaseRadius.radiusLd),
               ),
             ),
           ),
@@ -135,7 +135,7 @@ class HoagGhostButton extends StatelessWidget {
               children: [
                 icon!,
                 const SizedBox(
-                  width: HoagSpacing.spacing2,
+                  width: BaseSpacing.spacing2,
                 ),
                 Text(label),
               ],

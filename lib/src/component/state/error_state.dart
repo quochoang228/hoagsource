@@ -5,8 +5,8 @@ import 'package:gap/gap.dart';
 import '../../../hoagsource.dart';
 
 
-class HoagErrorState extends StatelessWidget {
-  const HoagErrorState({
+class BaseErrorState extends StatelessWidget {
+  const BaseErrorState({
     super.key,
     this.title,
     this.msg,
@@ -23,20 +23,20 @@ class HoagErrorState extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         SvgPicture.asset(
-          HoagAssets.stateError,
-          package: HoagStrings.flutterPackageName,
+          BaseAssets.stateError,
+          package: BaseStrings.flutterPackageName,
           width: MediaQuery.sizeOf(context).width * 0.35,
           height: MediaQuery.sizeOf(context).width * 0.35,
         ),
-        const Gap(HoagSpacing.spacing2),
+        const Gap(BaseSpacing.spacing2),
         Text(
           title ?? '',
-          style: HoagTextStyle.titleSmall,
+          style: BaseTextStyle.titleSmall,
         ),
-        const Gap(HoagSpacing.spacing2),
+        const Gap(BaseSpacing.spacing2),
         Text(
           msg ?? '',
-          style: HoagTextStyle.captionLarge,
+          style: BaseTextStyle.captionLarge,
         ),
       ],
     );

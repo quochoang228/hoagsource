@@ -8,7 +8,7 @@ const Color _bTextColor = Colors.white;
 const Color _bBackgroundColor = CoreColors.red;
 const Color _bDisableBackgroundColor = CoreColors.neutral01;
 const FontWeight _bFontWeight = FontWeight.bold;
-const double _bRadius = HoagRadius.radiusMd;
+const double _bRadius = BaseRadius.radiusMd;
 
 /// Universal button that supports users to set attributes such as background color, availability, etc.
 /// If [BrnBigMainButton], [BrnSmallMainButton], [BrnBigOutlineButton] cannot meet user needs
@@ -23,7 +23,7 @@ const double _bRadius = HoagRadius.radiusMd;
 /// The layout rules of this component refer to the layout rules of [Container]
 /// The [alignment] attribute of this component defaults to null, even if the constraints given by the parent layout are borderless (the maximum width or height is double.infinity.)
 /// The size of the component will also be the same as the child.
-/// That means: do not set a value for the [alignment] attribute, even if you put [HoagNormalButton] into [column] and [ListView],
+/// That means: do not set a value for the [alignment] attribute, even if you put [BaseNormalButton] into [column] and [ListView],
 /// He will also be as small as possible. If the [constraints] attribute is set, the layout will be Hoagd on [constraints].
 ///
 /// Case number one
@@ -69,7 +69,7 @@ const double _bRadius = HoagRadius.radiusMd;
 /// * [BrnSmallMainButton], small main color button
 /// * [BrnSmallOutlineButton], small border button
 ///
-class HoagNormalButton extends StatelessWidget {
+class BaseNormalButton extends StatelessWidget {
   /// 按钮是否可用 默认是true
   final bool isEnable;
 
@@ -119,15 +119,15 @@ class HoagNormalButton extends StatelessWidget {
   final BorderRadiusGeometry borderRadius;
 
   /// create BrnNormalButton
-  const HoagNormalButton({
+  const BaseNormalButton({
     super.key,
     required this.text,
     this.backgroundColor = _bBackgroundColor,
     this.isEnable = true,
     this.onTap,
     this.insertPadding = const EdgeInsets.symmetric(
-      vertical: HoagSpacing.spacing3,
-      horizontal: HoagSpacing.spacing25,
+      vertical: BaseSpacing.spacing3,
+      horizontal: BaseSpacing.spacing25,
     ),
     this.decoration,
     this.child,
@@ -142,7 +142,7 @@ class HoagNormalButton extends StatelessWidget {
     this.alignment,
   });
 
-  HoagNormalButton.outline({
+  BaseNormalButton.outline({
     super.key,
     Color? disableLineColor,
     Color? lineColor,
@@ -160,8 +160,8 @@ class HoagNormalButton extends StatelessWidget {
     this.fontSize = _bFontSize,
     this.disableTextColor,
     this.insertPadding = const EdgeInsets.symmetric(
-      vertical: HoagSpacing.spacing2,
-      horizontal: HoagSpacing.spacing25,
+      vertical: BaseSpacing.spacing2,
+      horizontal: BaseSpacing.spacing25,
     ),
     this.textStyle,
     this.constraints = const BoxConstraints.tightFor(),
@@ -209,7 +209,7 @@ class HoagNormalButton extends StatelessWidget {
       return textStyle!;
     }
 
-    return HoagTextStyle.labelLarge.copyWith(
+    return BaseTextStyle.labelLarge.copyWith(
       color: isEnable ? textColor : disableTextColor,
     );
   }

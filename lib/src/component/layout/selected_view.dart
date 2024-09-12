@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../hoagsource.dart';
 
-class HoagSelectedView extends StatelessWidget {
-  const HoagSelectedView({
+class BaseSelectedView extends StatelessWidget {
+  const BaseSelectedView({
     super.key,
     required this.child,
     this.isSelected,
@@ -24,12 +24,12 @@ class HoagSelectedView extends StatelessWidget {
             }
           : null,
       child: Container(
-        padding: const EdgeInsets.all(HoagSpacing.spacing4),
+        padding: const EdgeInsets.all(BaseSpacing.spacing4),
         decoration: BoxDecoration(
-          color: HoagColors.backgroundWhite,
+          color: BaseColors.backgroundWhite,
           border: Border(
             bottom: BorderSide(
-              color: HoagColors.borderDivider,
+              color: BaseColors.borderDivider,
             ),
           ),
         ),
@@ -38,8 +38,8 @@ class HoagSelectedView extends StatelessWidget {
             Expanded(child: child),
             isSelected ?? false
                 ? SvgPicture.asset(
-                    HoagAssets.tickCircle,
-                    package: HoagStrings.flutterPackageName,
+                    BaseAssets.tickCircle,
+                    package: BaseStrings.flutterPackageName,
                   )
                 : const SizedBox.shrink(),
           ],
