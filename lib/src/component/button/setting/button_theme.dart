@@ -6,39 +6,39 @@ abstract class BaseButtonTheme {
   static ElevatedButtonThemeData primaryButtonTheme = ElevatedButtonThemeData(
     style: ButtonStyle(
       alignment: Alignment.center,
-      elevation: const WidgetStatePropertyAll(0),
-      textStyle: const WidgetStatePropertyAll(
+      elevation: const MaterialStatePropertyAll(0),
+      textStyle: const MaterialStatePropertyAll(
         BaseTextStyle.labelLarge,
       ),
-      backgroundColor: WidgetStateProperty.resolveWith(
+      backgroundColor: MaterialStateProperty.resolveWith(
         (states) {
           //=====DISABLED EVENT
-          if (states.contains(WidgetState.disabled)) {
+          if (states.contains(MaterialState.disabled)) {
             return BaseColors.primary.withOpacity(0.5);
-          } else if (states.contains(WidgetState.pressed)) {
+          } else if (states.contains(MaterialState.pressed)) {
             return BaseColors.primaryPressed;
           } else {
             return BaseColors.primary;
           }
         },
       ),
-      foregroundColor: WidgetStateProperty.resolveWith(
+      foregroundColor: MaterialStateProperty.resolveWith(
         (states) {
           //=====DISABLED EVENT
-          if (states.contains(WidgetState.disabled)) {
+          if (states.contains(MaterialState.disabled)) {
             return BaseColors.textOnColor;
-          } else if (states.contains(WidgetState.pressed)) {
+          } else if (states.contains(MaterialState.pressed)) {
             return BaseColors.textOnColor;
           } else {
             return BaseColors.textOnColor;
           }
         },
       ),
-      padding: const WidgetStatePropertyAll<EdgeInsetsGeometry>(
+      padding: const MaterialStatePropertyAll<EdgeInsetsGeometry>(
         EdgeInsets.symmetric(
             vertical: BaseSpacing.spacing3, horizontal: BaseSpacing.spacing6),
       ),
-      shape: WidgetStatePropertyAll<OutlinedBorder>(
+      shape: MaterialStatePropertyAll<OutlinedBorder>(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(BaseRadius.radiusLd),
         ),

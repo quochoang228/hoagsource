@@ -26,11 +26,11 @@ class BaseCheckBox extends StatelessWidget {
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(BaseSpacing.spacing15s),
           ),
-      fillColor: WidgetStateProperty.resolveWith(
+      fillColor: MaterialStateProperty.resolveWith(
         (states) {
-          if (states.contains(WidgetState.selected)) {
+          if (states.contains(MaterialState.selected)) {
             return BaseColors.primary;
-          } else if (states.contains(WidgetState.disabled)) {
+          } else if (states.contains(MaterialState.disabled)) {
             return CoreColors.neutral01;
           } else {
             return CoreColors.transparent;

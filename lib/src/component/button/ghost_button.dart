@@ -74,42 +74,42 @@ class BaseGhostButton extends StatelessWidget {
       style: style ??
           ButtonStyle(
             alignment: alignment ?? Alignment.center,
-            elevation: WidgetStatePropertyAll(elevation ?? 0.0),
-            textStyle: WidgetStatePropertyAll(
+            elevation: MaterialStatePropertyAll(elevation ?? 0.0),
+            textStyle: MaterialStatePropertyAll(
               textStyle ?? BaseTextStyle.labelLarge,
             ),
-            backgroundColor: WidgetStateProperty.resolveWith(
+            backgroundColor: MaterialStateProperty.resolveWith(
               (states) {
-                if (states.contains(WidgetState.disabled)) {
+                if (states.contains(MaterialState.disabled)) {
                   return backgroundColorDisabled;
-                } else if (states.contains(WidgetState.pressed)) {
+                } else if (states.contains(MaterialState.pressed)) {
                   return backgroundColorPressed;
                 } else {
                   return backgroundColor;
                 }
               },
             ),
-            foregroundColor: WidgetStateProperty.resolveWith(
+            foregroundColor: MaterialStateProperty.resolveWith(
               (states) {
-                if (states.contains(WidgetState.disabled)) {
+                if (states.contains(MaterialState.disabled)) {
                   return foregroundColorDisabled.withOpacity(0.5);
-                } else if (states.contains(WidgetState.pressed)) {
+                } else if (states.contains(MaterialState.pressed)) {
                   return foregroundColorPressed;
                 } else {
                   return foregroundColor;
                 }
               },
             ),
-            padding: WidgetStatePropertyAll<EdgeInsetsGeometry>(
+            padding: MaterialStatePropertyAll<EdgeInsetsGeometry>(
               padding ??
                   const EdgeInsets.symmetric(
                       vertical: BaseSpacing.spacing3,
                       horizontal: BaseSpacing.spacing6),
             ),
-            side: WidgetStateProperty.resolveWith(
+            side: MaterialStateProperty.resolveWith(
               (states) {
                 var color = borderColor;
-                if (states.contains(WidgetState.disabled)) {
+                if (states.contains(MaterialState.disabled)) {
                   color = borderColor.withOpacity(0.5);
                 }
                 return BorderSide(
@@ -119,7 +119,7 @@ class BaseGhostButton extends StatelessWidget {
                 );
               },
             ),
-            shape: WidgetStatePropertyAll<OutlinedBorder>(
+            shape: MaterialStatePropertyAll<OutlinedBorder>(
               RoundedRectangleBorder(
                 borderRadius:
                     borderRadius ?? BorderRadius.circular(BaseRadius.radiusLd),
