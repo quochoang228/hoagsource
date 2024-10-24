@@ -32,3 +32,5 @@ export 'text/_text.dart' show BaseExpandableText, BaseText;
 export 'toast/_toast.dart' show BaseNormalToast;
 
 export 'soft_edge_blur/_soft_edge_blur.dart' show SoftEdgeBlur, EdgeBlur, EdgeType;
+
+export 'progress/_progress.dart';

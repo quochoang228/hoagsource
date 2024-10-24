@@ -10,6 +10,7 @@ class Component extends StatefulWidget {
 
 class _ComponentState extends State<Component> {
   var checkBoxValue = false;
+  int progress = 5;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +50,24 @@ class _ComponentState extends State<Component> {
               const BaseIcon(BaseIcons.icon1, style: BaseIconStyle.solid),
               const BaseText(content: 'content'),
               BaseDashedLine(contentWidget: const Text('content')),
-
+              CircularAnimatedProgressBar(
+                  size: 150,
+                  progress: (progress.clamp(0, 10) / 10),
+                  onPressed: () {
+                    setState(() {
+                      progress += 2;
+                    });
+                  }),
+              RectangleAnimatedProgressBar(
+                progress: (progress.clamp(0, 10) / 10),
+                enumPosition: PositionEnum.right,
+                colorsWave: const [
+                  Color(0x4D2196f3),
+                  Color(0x662196f3),
+                  Color(0xCC2196f3),
+                ],
+                backgroundColor: const Color(0x262192F3),
+              ),
             ],
           ),
         ),
