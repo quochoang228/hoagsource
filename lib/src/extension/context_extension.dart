@@ -50,6 +50,10 @@ extension ContextExtension on BuildContext {
     );
   }
 
-
+  /// Chế độ tối hiện tại có đang hoạt động không
+  bool get isDarkMode {
+    final brightness = MediaQuery.of(this).platformBrightness;
+    return brightness == Brightness.dark;
+  }
   
 }

@@ -103,7 +103,7 @@ class BaseTokenBorders extends ThemeExtension<BaseTokenBorders> with Diagnostica
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty("type", "MoonBorders"))
+      ..add(DiagnosticsProperty("type", "BaseTokenBorders"))
       ..add(DiagnosticsProperty<BorderRadiusGeometry>("interactiveXs", interactiveXs))
       ..add(DiagnosticsProperty<BorderRadiusGeometry>("interactiveSm", interactiveSm))
       ..add(DiagnosticsProperty<BorderRadiusGeometry>("interactiveMd", interactiveMd))

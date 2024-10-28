@@ -36,7 +36,7 @@ class BaseTokenOpacities extends ThemeExtension<BaseTokenOpacities> with Diagnos
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty("type", "MoonOpacities"))
+      ..add(DiagnosticsProperty("type", "BaseTokenOpacities"))
       ..add(DoubleProperty("disabled", disabled));
   }
 }
