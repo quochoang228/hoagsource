@@ -4,11 +4,11 @@ import 'package:flutter/rendering.dart';
 typedef OnWidgetSizeChange = void Function(Size size);
 
 /// Wrap a widget with this to receive updates about its size changes.
-class MeasureSize extends SingleChildRenderObjectWidget {
+class BaseMeasureSize extends SingleChildRenderObjectWidget {
   final OnWidgetSizeChange onChange;
   final bool getInitialSize;
 
-  const MeasureSize({
+  const BaseMeasureSize({
     super.key,
     required this.onChange,
     required Widget super.child,

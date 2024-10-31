@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:hoagsource/hoagsource.dart';
 
 @immutable
-class BaseFocusEffect extends ThemeExtension<BaseFocusEffect> with DiagnosticableTreeMixin {
+class BaseTokenFocusEffect extends ThemeExtension<BaseTokenFocusEffect> with DiagnosticableTreeMixin {
   /// The color of the focus effect.
   final Color effectColor;
 
@@ -18,7 +18,7 @@ class BaseFocusEffect extends ThemeExtension<BaseFocusEffect> with Diagnosticabl
   /// The curve of the focus effect.
   final Curve effectCurve;
 
-  const BaseFocusEffect({
+  const BaseTokenFocusEffect({
     required this.effectColor,
     required this.effectExtent,
     required this.effectDuration,
@@ -26,13 +26,13 @@ class BaseFocusEffect extends ThemeExtension<BaseFocusEffect> with Diagnosticabl
   });
 
   @override
-  BaseFocusEffect copyWith({
+  BaseTokenFocusEffect copyWith({
     Color? effectColor,
     double? effectExtent,
     Duration? effectDuration,
     Curve? effectCurve,
   }) {
-    return BaseFocusEffect(
+    return BaseTokenFocusEffect(
       effectColor: effectColor ?? this.effectColor,
       effectExtent: effectExtent ?? this.effectExtent,
       effectDuration: effectDuration ?? this.effectDuration,
@@ -41,10 +41,10 @@ class BaseFocusEffect extends ThemeExtension<BaseFocusEffect> with Diagnosticabl
   }
 
   @override
-  BaseFocusEffect lerp(ThemeExtension<BaseFocusEffect>? other, double t) {
-    if (other is! BaseFocusEffect) return this;
+  BaseTokenFocusEffect lerp(ThemeExtension<BaseTokenFocusEffect>? other, double t) {
+    if (other is! BaseTokenFocusEffect) return this;
 
-    return BaseFocusEffect(
+    return BaseTokenFocusEffect(
       effectColor: colorPremulLerp(effectColor, other.effectColor, t)!,
       effectExtent: lerpDouble(effectExtent, other.effectExtent, t)!,
       effectDuration: lerpDuration(effectDuration, other.effectDuration, t),
@@ -56,7 +56,7 @@ class BaseFocusEffect extends ThemeExtension<BaseFocusEffect> with Diagnosticabl
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty("type", "MoonFocusEffects"))
+      ..add(DiagnosticsProperty("type", "BaseTokenFocusEffect"))
       ..add(ColorProperty("effectColor", effectColor))
       ..add(DoubleProperty("effectExtent", effectExtent))
       ..add(DiagnosticsProperty<Duration>("effectDuration", effectDuration))

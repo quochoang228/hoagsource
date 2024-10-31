@@ -31,6 +31,20 @@ export 'text/_text.dart' show BaseExpandableText, BaseText;
 
 export 'toast/_toast.dart' show BaseNormalToast;
 
-export 'soft_edge_blur/_soft_edge_blur.dart' show SoftEdgeBlur, EdgeBlur, EdgeType;
+export 'soft_edge_blur/_soft_edge_blur.dart'
+    show SoftEdgeBlur, EdgeBlur, EdgeType;
 
 export 'progress/_progress.dart';
+
+export 'common/_common.dart';
+
+export 'accordion/accordion.dart' show BaseAccordion, BaseAccordionSize;
+
+export 'alert/alert.dart' show BaseAlert;
+
+export 'auth_code/auth_code.dart'
+    show
+        BaseAuthCode,
+        BaseAuthCodeErrorBuilder,
+        AuthFieldShape,
+        ErrorAnimationType;

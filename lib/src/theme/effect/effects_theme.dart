@@ -8,7 +8,7 @@ class BaseTokenEffectsTheme extends ThemeExtension<BaseTokenEffectsTheme> with D
   final BaseTokens tokens;
 
   /// The focus effect properties of the control widgets.
-  final BaseFocusEffect controlFocusEffect;
+  final BaseTokenFocusEffect controlFocusEffect;
 
   /// The hover effect properties of the control widgets.
   final BaseHoverEffect controlHoverEffect;
@@ -21,12 +21,12 @@ class BaseTokenEffectsTheme extends ThemeExtension<BaseTokenEffectsTheme> with D
 
   BaseTokenEffectsTheme({
     required this.tokens,
-    BaseFocusEffect? controlFocusEffect,
+    BaseTokenFocusEffect? controlFocusEffect,
     BaseHoverEffect? controlHoverEffect,
     BaseControlEffect? controlPulseEffect,
     BaseControlEffect? controlScaleEffect,
   })  : controlFocusEffect = controlFocusEffect ??
-            BaseFocusEffect(
+            BaseTokenFocusEffect(
               effectColor: tokens.colors.bulma.withOpacity(0.25),
               effectExtent: 4,
               effectDuration: tokens.transitions.defaultTransitionDuration,
@@ -56,7 +56,7 @@ class BaseTokenEffectsTheme extends ThemeExtension<BaseTokenEffectsTheme> with D
   @override
   BaseTokenEffectsTheme copyWith({
     BaseTokens? tokens,
-    BaseFocusEffect? controlFocusEffect,
+    BaseTokenFocusEffect? controlFocusEffect,
     BaseHoverEffect? controlHoverEffect,
     BaseControlEffect? controlPulseEffect,
     BaseControlEffect? controlScaleEffect,
@@ -102,7 +102,7 @@ class BaseTokenEffectsTheme extends ThemeExtension<BaseTokenEffectsTheme> with D
         ),
       )
       ..add(
-        DiagnosticsProperty<BaseFocusEffect>(
+        DiagnosticsProperty<BaseTokenFocusEffect>(
           "controlFocusEffect",
           controlFocusEffect,
         ),

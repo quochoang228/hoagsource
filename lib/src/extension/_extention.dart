@@ -4,7 +4,7 @@ export 'date_extension.dart' show DateExtension;
 export 'media_query_extension.dart' show MediaQueryExtension;
 export 'string_extention.dart' show StringExtention;
 export 'widget_extension.dart' show TextStyledExtension, WidgetExtension;
-export 'generic_extention.dart'
+export 'generic_extension.dart'
     show
         GenericExtention,
         ComparableExtensions,
@@ -15,3 +15,5 @@ export 'generic_extention.dart'
         ListExtensions,
         MapExtensions,
         SetExtensions;
+
+export 'geometry_extension.dart' show BorderRadiusGeometryX;

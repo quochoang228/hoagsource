@@ -49,7 +49,7 @@ class _ComponentState extends State<Component> {
                   value: checkBoxValue),
               const BaseIcon(BaseIcons.icon1, style: BaseIconStyle.solid),
               const BaseText(content: 'content'),
-              BaseDashedLine(contentWidget: const Text('content')),
+              const BaseDashedLine(contentWidget: Text('content')),
               CircularAnimatedProgressBar(
                   size: 150,
                   progress: (progress.clamp(0, 10) / 10),
@@ -68,6 +68,67 @@ class _ComponentState extends State<Component> {
                 ],
                 backgroundColor: const Color(0x262192F3),
               ),
+              const SizedBox(height: 8),
+              const BaseAccordion(
+                label: Text('data'),
+                childrenPadding: EdgeInsets.all(16),
+                accordionSize: BaseAccordionSize.lg,
+                children: [
+                  Text(
+                      'Lorem ipsum dolor sit amet consectetur. Facilisi sagittis elementum lacus egestas vitae id tortor. Duis arcu orci aliquet diam montes'),
+                ],
+              ),
+              const SizedBox(height: 8),
+              BaseAlert(
+                label: const Text(
+                    'Because of your contributions on GitHub, two-factor authentication is required for your account.'),
+                backgroundColor: BaseTokenColors.light.heles,
+                leading: const BaseIcon(BaseIcons.information),
+                color: CoreColors.blue,
+              ),
+              const SizedBox(height: 8),
+              BaseAlert(
+                label: const Text(
+                    'Because of your contributions on GitHub, two-factor authentication is required for your account.'),
+                borderColor: BaseTokenColors.light.bulma,
+                showBorder: true,
+                backgroundColor: CoreColors.transparent,
+                leading: const BaseIcon(BaseIcons.information),
+                color: CoreColors.blue,
+              ),
+              const SizedBox(height: 8),
+              const BaseAccordion<String>(
+                // The identityValue and groupIdentityValue can be used to control the
+                // auto collapse behaviour of the accordion.
+                identityValue: 'collapse behaviour of the accordion',
+                groupIdentityValue: "_currentlyOpenAccordionItem",
+                accordionSize: BaseAccordionSize.sm,
+                hasContentOutside: true,
+                childrenPadding: EdgeInsets.all(12),
+                // onExpansionChanged: (String? value) => setState(
+                //   () => _currentlyOpenAccordionItem = value,
+                // ),
+                leading: BaseIcon(BaseIcons.dash),
+                label: Text("Grouped MoonAccordion item #2"),
+                children: [
+                  Text(
+                      'Lorem ipsum dolor sit amet consectetur. Facilisi sagittis elementum lacus egestas vitae id tortor. Duis arcu orci aliquet diam montes'),
+                ],
+                // children: const [
+                //   Text(contentText),
+                // ],
+              ),
+              const SizedBox(height: 188),
+              BaseAuthCode(
+                validator: (value) {
+                  if (value != null && !(value.isNumeric)) {
+                    return "Định dạng sai";
+                  }
+                  return null;
+                },
+                errorBuilder: (context, errorText) => Text(errorText ?? ''),
+              ),
+              const SizedBox(height: 188),
             ],
           ),
         ),

@@ -5,7 +5,7 @@ import 'color_premul_lerp.dart';
 
 
 // TODO: Remove this once Flutter transitions from straight alpha to premultiplied alpha for color lerping.
-class ShapeDecorationWithPremultipliedAlpha extends Decoration {
+class BaseShapeDecorationWithPremultipliedAlpha extends Decoration {
   /// The color to fill in the background of the shape.
   ///
   /// The color is under the [image].
@@ -52,7 +52,7 @@ class ShapeDecorationWithPremultipliedAlpha extends Decoration {
   /// (via its [BoxPainter.paint method). The [BoxPainter] is obtained when
   /// [createBoxPainter] is called.
   ///
-  /// When a [ShapeDecorationWithPremultipliedAlpha] is used with a [Container]
+  /// When a [BaseShapeDecorationWithPremultipliedAlpha] is used with a [Container]
   /// widget or a [DecoratedBox] widget (which is what [Container] uses), the
   /// [TextDirection] specified in the [ImageConfiguration] is obtained from the
   /// ambient [Directionality], using [createLocalImageConfiguration].
@@ -70,7 +70,7 @@ class ShapeDecorationWithPremultipliedAlpha extends Decoration {
   /// one (or both) of them must be null.
   ///
   /// The [shape] must not be null.
-  const ShapeDecorationWithPremultipliedAlpha({
+  const BaseShapeDecorationWithPremultipliedAlpha({
     this.color,
     this.image,
     this.gradient,
@@ -81,15 +81,15 @@ class ShapeDecorationWithPremultipliedAlpha extends Decoration {
   /// Creates a shape decoration configured to match a [BoxDecoration].
   ///
   /// The [BoxDecoration] class is more efficient for shapes that it can
-  /// describe than the [ShapeDecorationWithPremultipliedAlpha] class is for
-  /// those same shapes, because [ShapeDecorationWithPremultipliedAlpha] has to
+  /// describe than the [BaseShapeDecorationWithPremultipliedAlpha] class is for
+  /// those same shapes, because [BaseShapeDecorationWithPremultipliedAlpha] has to
   /// be more general as it can support any shape. However, having a
-  /// [ShapeDecorationWithPremultipliedAlpha] is sometimes necessary, for
-  /// example when calling [ShapeDecorationWithPremultipliedAlpha.lerp] to
+  /// [BaseShapeDecorationWithPremultipliedAlpha] is sometimes necessary, for
+  /// example when calling [BaseShapeDecorationWithPremultipliedAlpha.lerp] to
   /// transition between different shapes (e.g. from a [CircleBorder] to a
   /// [RoundedRectangleBorder]; the [BoxDecoration] class cannot animate the
   /// transition from a [BoxShape.circle] to [BoxShape.rectangle]).
-  factory ShapeDecorationWithPremultipliedAlpha.fromBoxDecoration(
+  factory BaseShapeDecorationWithPremultipliedAlpha.fromBoxDecoration(
       BoxDecoration source,
       ) {
     final ShapeBorder shape;
@@ -114,7 +114,7 @@ class ShapeDecorationWithPremultipliedAlpha extends Decoration {
         }
     }
 
-    return ShapeDecorationWithPremultipliedAlpha(
+    return BaseShapeDecorationWithPremultipliedAlpha(
       color: source.color,
       image: source.image,
       gradient: source.gradient,
@@ -139,46 +139,46 @@ class ShapeDecorationWithPremultipliedAlpha extends Decoration {
   bool get isComplex => shadows != null;
 
   @override
-  ShapeDecorationWithPremultipliedAlpha? lerpFrom(Decoration? a, double t) {
+  BaseShapeDecorationWithPremultipliedAlpha? lerpFrom(Decoration? a, double t) {
     if (a is BoxDecoration) {
-      return ShapeDecorationWithPremultipliedAlpha.lerp(
-        ShapeDecorationWithPremultipliedAlpha.fromBoxDecoration(a),
+      return BaseShapeDecorationWithPremultipliedAlpha.lerp(
+        BaseShapeDecorationWithPremultipliedAlpha.fromBoxDecoration(a),
         this,
         t,
       );
-    } else if (a == null || a is ShapeDecorationWithPremultipliedAlpha) {
-      return ShapeDecorationWithPremultipliedAlpha.lerp(
-        a as ShapeDecorationWithPremultipliedAlpha?,
+    } else if (a == null || a is BaseShapeDecorationWithPremultipliedAlpha) {
+      return BaseShapeDecorationWithPremultipliedAlpha.lerp(
+        a as BaseShapeDecorationWithPremultipliedAlpha?,
         this,
         t,
       );
     }
 
-    return super.lerpFrom(a, t) as ShapeDecorationWithPremultipliedAlpha?;
+    return super.lerpFrom(a, t) as BaseShapeDecorationWithPremultipliedAlpha?;
   }
 
   @override
-  ShapeDecorationWithPremultipliedAlpha? lerpTo(Decoration? b, double t) {
+  BaseShapeDecorationWithPremultipliedAlpha? lerpTo(Decoration? b, double t) {
     if (b is BoxDecoration) {
-      return ShapeDecorationWithPremultipliedAlpha.lerp(
+      return BaseShapeDecorationWithPremultipliedAlpha.lerp(
         this,
-        ShapeDecorationWithPremultipliedAlpha.fromBoxDecoration(b),
+        BaseShapeDecorationWithPremultipliedAlpha.fromBoxDecoration(b),
         t,
       );
-    } else if (b == null || b is ShapeDecorationWithPremultipliedAlpha) {
-      return ShapeDecorationWithPremultipliedAlpha.lerp(
+    } else if (b == null || b is BaseShapeDecorationWithPremultipliedAlpha) {
+      return BaseShapeDecorationWithPremultipliedAlpha.lerp(
         this,
-        b as ShapeDecorationWithPremultipliedAlpha?,
+        b as BaseShapeDecorationWithPremultipliedAlpha?,
         t,
       );
     }
 
-    return super.lerpTo(b, t) as ShapeDecorationWithPremultipliedAlpha?;
+    return super.lerpTo(b, t) as BaseShapeDecorationWithPremultipliedAlpha?;
   }
 
-  static ShapeDecorationWithPremultipliedAlpha? lerp(
-      ShapeDecorationWithPremultipliedAlpha? a,
-      ShapeDecorationWithPremultipliedAlpha? b,
+  static BaseShapeDecorationWithPremultipliedAlpha? lerp(
+      BaseShapeDecorationWithPremultipliedAlpha? a,
+      BaseShapeDecorationWithPremultipliedAlpha? b,
       double t,
       ) {
     if (a == null && b == null) {
@@ -195,7 +195,7 @@ class ShapeDecorationWithPremultipliedAlpha extends Decoration {
       }
     }
 
-    return ShapeDecorationWithPremultipliedAlpha(
+    return BaseShapeDecorationWithPremultipliedAlpha(
       color: colorPremulLerp(a!.color, b!.color, t),
       gradient: Gradient.lerp(a.gradient, b.gradient, t),
       image: t < 0.5 ? a.image : b.image,
@@ -209,7 +209,7 @@ class ShapeDecorationWithPremultipliedAlpha extends Decoration {
     if (identical(this, other)) return true;
     if (other.runtimeType != runtimeType) return false;
 
-    return other is ShapeDecorationWithPremultipliedAlpha &&
+    return other is BaseShapeDecorationWithPremultipliedAlpha &&
         other.color == color &&
         other.gradient == gradient &&
         other.image == image &&
@@ -266,13 +266,13 @@ class ShapeDecorationWithPremultipliedAlpha extends Decoration {
   }
 }
 
-/// An object that paints a [ShapeDecorationWithPremultipliedAlpha] into a
+/// An object that paints a [BaseShapeDecorationWithPremultipliedAlpha] into a
 /// canvas.
 class _ShapeDecorationPainter extends BoxPainter {
   _ShapeDecorationPainter(this._decoration, VoidCallback onChanged)
       : super(onChanged);
 
-  final ShapeDecorationWithPremultipliedAlpha _decoration;
+  final BaseShapeDecorationWithPremultipliedAlpha _decoration;
 
   Rect? _lastRect;
   TextDirection? _lastTextDirection;
