@@ -48,3 +48,5 @@ export 'auth_code/auth_code.dart'
         BaseAuthCodeErrorBuilder,
         AuthFieldShape,
         ErrorAnimationType;
+
+export 'tutorial/_tutorial.dart';
