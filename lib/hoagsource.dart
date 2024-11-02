@@ -4,7 +4,7 @@ export 'src/component/_component.dart';
 
 export 'src/theme/_theme.dart';
 
-export 'src/extension/_extention.dart';
+export 'src/extension/_extension.dart';
 
 export 'src/helper/_helper.dart';
 
