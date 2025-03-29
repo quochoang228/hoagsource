@@ -30,6 +30,11 @@ class BaseNormalToast {
     required BuildContext context,
     Duration? duration,
     Widget? preIcon,
+    Color? background,
+    VoidCallback? onDismiss,
+    double? radius,
+    TextStyle? textStyle,
+    double? verticalOffset,
   }) {
     show(
       text,
@@ -37,13 +42,31 @@ class BaseNormalToast {
       duration: duration,
       preIcon: preIcon,
       gravity: BrnToastGravity.center,
+      background: background,
+      onDismiss: onDismiss,
+      radius: radius,
+      textStyle: textStyle ??
+          const TextStyle(
+            fontSize: 14,
+            height: 1.43,
+            fontWeight: FontWeight.w500,
+            color: Colors.white,
+          ),
+      verticalOffset: verticalOffset,
     );
   }
 
-  static void showSuccess(
-      {required String text,
-      required BuildContext context,
-      Duration? duration}) {
+  static void showSuccess({
+    required String text,
+    required BuildContext context,
+    Duration? duration,
+    Color? background,
+    Widget? preIcon,
+    VoidCallback? onDismiss,
+    double? radius,
+    TextStyle? textStyle,
+    double? verticalOffset,
+  }) {
     show(
       text,
       context,
@@ -53,13 +76,31 @@ class BaseNormalToast {
         package: BaseStrings.flutterPackageName,
       ),
       gravity: BrnToastGravity.center,
+      background: background ?? CoreColors.green,
+      onDismiss: onDismiss,
+      radius: radius,
+      textStyle: textStyle ??
+          const TextStyle(
+            fontSize: 14,
+            height: 1.43,
+            fontWeight: FontWeight.w500,
+            color: Colors.white,
+          ),
+      verticalOffset: verticalOffset,
     );
   }
 
-  static void showError(
-      {required String text,
-      required BuildContext context,
-      Duration? duration}) {
+  static void showError({
+    required String text,
+    required BuildContext context,
+    Duration? duration,
+    Color? background,
+    Widget? preIcon,
+    VoidCallback? onDismiss,
+    double? radius,
+    TextStyle? textStyle,
+    double? verticalOffset,
+  }) {
     show(
       text,
       context,
@@ -69,6 +110,17 @@ class BaseNormalToast {
         package: BaseStrings.flutterPackageName,
       ),
       gravity: BrnToastGravity.center,
+      background: background ?? CoreColors.red,
+      onDismiss: onDismiss,
+      radius: radius,
+      textStyle: textStyle ??
+          const TextStyle(
+            fontSize: 14,
+            height: 1.43,
+            fontWeight: FontWeight.w500,
+            color: Colors.white,
+          ),
+      verticalOffset: verticalOffset,
     );
   }
 
